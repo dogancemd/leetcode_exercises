@@ -1,0 +1,63 @@
+class Solution {
+public:
+    string intToRoman(int num) {
+        string result;
+        int tmp_num,i;
+        tmp_num=num/1000;
+        for(i=0;i<tmp_num;i++){
+            result+="M";
+        }
+        num-=tmp_num*1000;
+        tmp_num=num/900;
+        if(tmp_num)
+            result+="CM";
+        num-=tmp_num*900;
+        tmp_num=num/500;
+        if(tmp_num)
+            result+="D";
+        num-=tmp_num*500;
+        tmp_num=num/400;
+        if(tmp_num)
+            result+="CD";
+        num-=tmp_num*400;
+        tmp_num=num/100;
+        for(i=0;i<tmp_num;i++){
+            result+="C";
+        }
+        num-=tmp_num*100;
+        tmp_num=num/90;
+        if(tmp_num)
+            result+="XC";
+        num-=tmp_num*90;
+        tmp_num=num/50;
+        if(tmp_num)
+            result+="L";
+        num-=tmp_num*50;
+        tmp_num=num/40;
+        if(tmp_num)
+            result+="XL";
+        num-=tmp_num*40;
+        tmp_num=num/10;
+        for(i=0;i<tmp_num;i++){
+            result+="X";
+        }
+        num-=tmp_num*10;
+        tmp_num=num/9;
+        if(tmp_num)
+            result+="IX";
+        num-=tmp_num*9;
+        tmp_num=num/5;
+        if(tmp_num)
+            result+="V";
+        num-=tmp_num*5;
+        tmp_num=num/4;
+        if(tmp_num)
+            result+="IV";
+        num-=tmp_num*4;
+        tmp_num=num/1;
+        for(i=0;i<tmp_num;i++){
+            result+="I";
+        }
+        return result;
+    }
+};
